@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>docsify</title>
+  <title>柒</title>
   <meta name="keywords" content="docsify" />
   <meta name="description" content="docsify" />
   <meta name="renderer" content="webkit" />
@@ -38,11 +38,11 @@
     window.$docsify = {
       el: "#app",
       //左侧大标题
-      name: "Docsify",
+      name: "Title",
       //如果觉得左侧大标题不好看可以使用一张Banner图片代替，name和logo只能选其1
       // logo: "assets/Banner.jpg",
       //源代码地址
-      repo: "https://gitee.com/dahuotu/docsify",
+      repo: "https://github.com/suqii/docsify",
       //默认首页
       homepage: "README.md",
       //自定义404错误页
@@ -55,6 +55,8 @@
       themeColor: "#0a8",
       //开启封面
       coverpage: true,
+      // coverpage: true,
+      // onlyCover: true,
       //开启顶部导航
       loadNavbar: true,
       //开启侧边栏
@@ -62,7 +64,7 @@
       //文档标题深度
       subMaxLevel: 5,
       //开启页脚
-      loadFooter: true,
+      loadFooter: false,
       //搜索设置
       search: {
         maxAge: 86400000,
@@ -108,7 +110,7 @@
       plugins: [
         //在Gitee编辑
         EditOnGithubPlugin.create(
-          "https://gitee.com/dahuotu/docsify",
+          "https://github.com/suqii/docsify",
           null,
           function (file) {
             if (file.indexOf("en") === -1) {
@@ -133,7 +135,8 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
   <!-- <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script> -->
   <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-  <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script>
+  <!-- 爱心点击脚本 -->
+  <!-- <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script> -->
   <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
   <script src="//unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script>
   <script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
@@ -156,7 +159,8 @@
       }
     };
   </script>
-  <div class="social-share"></div>
+  <!-- 分享插件 -->
+  <!-- <div class="social-share"></div> -->
 </body>
 
 </html>
