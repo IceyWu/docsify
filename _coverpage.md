@@ -1,4 +1,5 @@
-![Logo](assets/Logo.png)
+<!-- ![Logo](assets/Logo.png) -->
+![Logo](assets/cat7.gif)
 
 # 柒柒的Markdown
 
