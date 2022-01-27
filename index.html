@@ -139,6 +139,66 @@
             }
           ),
         ],
+        plugins: [
+          function (hook) {
+            var seconds = 1000
+            var minutes = seconds * 60
+            var hours = minutes * 60
+            var days = hours * 24
+            var years = days * 365
+            var today = new Date()
+            var todayYear = today.getFullYear()
+            var todayMonth = today.getMonth() + 1
+            var todayDate = today.getDate()
+            var todayHour = today.getHours()
+            var todayMinute = today.getMinutes()
+            var todaySecond = today.getSeconds()
+            var t1 = Date.UTC(2022, 01, 26, 00, 00, 00) //这里设置网站运行开始时间
+            var t2 = Date.UTC(
+              todayYear,
+              todayMonth,
+              todayDate,
+              todayHour,
+              todayMinute,
+              todaySecond
+            )
+            var diff = t2 - t1
+            var diffYears = Math.floor(diff / years)
+            var diffDays = Math.floor(diff / days - diffYears * 365)
+            var diffHours = Math.floor(
+              (diff - (diffYears * 365 + diffDays) * days) / hours
+            )
+            var diffMinutes = Math.floor(
+              (diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                minutes
+            )
+            var diffSeconds = Math.floor(
+              (diff -
+                (diffYears * 365 + diffDays) * days -
+                diffHours * hours -
+                diffMinutes * minutes) /
+                seconds
+            )
+            // var tSiteTime =  '本站已运行' + diffYears + '年' + diffDays + '天'
+
+            var tSiteTime =
+              diffYears > 0
+                ? `本站已运行${diffYears}年${diffDays}天`
+                : `本站已运行${diffDays}天`
+
+            var footer = [
+              '<hr/>',
+              '<footer>',
+              '<span><a href="https://www.docsify.org">suqi</a> &copy;2022.</span>',
+              '<span>文档使用<a href="https://github.com/QingWei-Li/docsify" target="_blank">docsify</a>撰写</span>',
+              '<span>&nbsp;' + tSiteTime + '</span>',
+              '</footer>',
+            ].join('')
+            hook.afterEach(function (html) {
+              return html + footer
+            })
+          },
+        ],
       }
     </script>
     <!-- Docsify v4 -->
